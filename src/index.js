@@ -1,6 +1,3 @@
-// import './css/ress.min.css';
-// import './styles.scss';
-
 const floatAddBtn = document.getElementsByClassName('c-floatAddBtn')[0];
 const addBtn = document.getElementsByClassName('c-addBtn')[0];
 const todoList = document.getElementsByClassName('p-todoList')[0];
