@@ -1,5 +1,5 @@
-import './css/ress.min.css';
-import './styles.scss';
+// import './css/ress.min.css';
+// import './styles.scss';
 
 const floatAddBtn = document.getElementsByClassName('c-floatAddBtn')[0];
 const addBtn = document.getElementsByClassName('c-addBtn')[0];
