@@ -57,6 +57,9 @@ ul, ol {
 
 button {
   line-height: 1;
+  i {
+    pointer-events: none;
+  }
 }
 
 //icon
@@ -118,6 +121,10 @@ i {
 .l-header {
   background: #fff;
   text-align: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
   &__inner {
     width: 100%;
     max-width: 720px;
@@ -125,8 +132,11 @@ i {
     margin-right: auto; 
   }
   &__title {
-    padding: 18px 15px 10px;
+    padding: 10px 15px 4px;
     letter-spacing: 0.05em;
+    @include tb {
+      padding: 18px 15px 10px;
+    }
   }
 }
 
@@ -156,7 +166,7 @@ i {
   list-style: none;
   &__item {
     width: calc(100% / 3);
-    padding: 9px 0;
+    padding: 6px 0;
     color: $color-gray;
     cursor: pointer;
     &.is-active {
@@ -207,17 +217,18 @@ i {
     width: calc(100% - 32px);
     word-break: break-all;
   }
-  &__edit {
+  &__reEdit {
     font-size: 2.0rem;
     color: $color-palegray;
     margin-left: auto;
-    visibility: hidden;
-    opacity: 0;
+    visibility: visible;
+    opacity: 1;
     position: absolute;
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
     z-index: 3;
+    transition: visible .2s, opacity .2s;
   }
   &__remove {
     width: 100%;
@@ -247,9 +258,9 @@ i {
     &__body {
       width: calc(100% - 60px);
     }
-    &__edit {
-      visibility: visible;
-      opacity: 1;
+    &__reEdit {
+      visibility: hidden;
+      opacity: 0;
     }
     &__check {
       pointer-events: none;
@@ -260,7 +271,11 @@ i {
 .c-card.-input {
   .c-card {
     &__inner {
-      box-shadow: 0 0 2px $color-pink;
+      box-shadow: 0 0 1px 1px $color-pink;
+    }
+    &__reEdit {
+      visibility: hidden;
+      opacity: 0;
     }
   }
 }
@@ -293,13 +308,60 @@ i {
   right: 15px;
   font-size: 2.4rem;
   box-shadow: 0 0 20px rgba(116, 19, 31, 0.12), 0 0 2px rgba(116, 19, 31, 0.05);
+  z-index: 4;
+}
+
+.c-dialog {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  transition: opacity .2s, visibility .2s;
+  &__inner {
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+  }
+  &__body {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    p {
+      padding: 15px;
+      border-bottom: 1px solid #ccc;
+    }
+    button {
+      padding: 15px;
+      font-size: 1.4rem;
+      color: darken($color-pink, 5%);
+    }
+  }
+  &__cancel {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 8px;
+    font-size: 1.4rem;
+    color: darken(#8AACD3, 10%);
+  }
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .p-todoList {
   &__item {
-    + .p-todoList__item {
-      margin-top: 8px;
-    }
+    margin-bottom: 8px;
   }
 }
 

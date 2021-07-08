@@ -3,6 +3,10 @@
     <head>
         <title>ToDO List</title>
         <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
     </head>
 
     <body>
@@ -17,7 +21,9 @@
             </div>
         </header>
         <main class="l-main">
-            <button class="c-edit"><i class="icon-more-horizontal"></i></button>
+            <button class="c-edit" type="button">
+                <i class="icon-more-horizontal"></i>
+            </button>
             <ul class="p-todoList">
                 <!-- <li class="p-todoList__item c-card" data-status="todo">
                     <div class="c-card__inner">
@@ -53,6 +59,15 @@
                 <p>タスクがありません</p>
             </div>
         </main>
+        <div class="c-dialog" id="js-dialog">
+            <div class="c-dialog__inner">
+                <div class="c-dialog__body">
+                    <p>タスクを削除しますか？</p>
+                    <button id="yes">削除</button>
+                </div>
+                <button class="c-dialog__cancel" id="cancel">キャンセル</button>
+            </div>
+        </div>
         <script src="src/index.js"></script>
     </body>
 </html>
