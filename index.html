@@ -8,68 +8,58 @@
             content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
         <link rel="stylesheet" href="src/css/ress.min.css" />
-        <link rel="stylesheet" href="src/styles.css" />
     </head>
 
     <body>
         <header class="l-header">
             <div class="l-header__inner">
                 <h1 class="l-header__title">ToDo List</h1>
-                <ul class="c-tab" id="js-tab">
-                    <li class="c-tab__item is-active" data-status="all">All</li>
-                    <li class="c-tab__item" data-status="todo">ToDo</li>
+                <ul class="c-tab" id="tabGroup">
+                    <li
+                        class="c-tab__item is-active"
+                        data-status="todo"
+                        id="js-active"
+                    >
+                        ToDo
+                    </li>
                     <li class="c-tab__item" data-status="done">Done</li>
                 </ul>
             </div>
         </header>
         <main class="l-main">
-            <button class="c-edit" type="button">
-                <i class="icon-more-horizontal"></i>
-            </button>
-            <ul class="p-todoList">
-                <!-- <li class="p-todoList__item c-card" data-status="todo">
-                    <div class="c-card__inner">
-                        <button class="c-card__check"></button>
-                        <p class="c-card__body">コンタクトレンズを買う</p>
-                        <button class="c-card__edit">
-                            <i class="icon-edit-2"></i>
-                        </button>
-                    </div>
-                    <button class="c-card__remove">
-                        <i class="icon-trash-2"></i>
+            <div class="p-screens" id="screens">
+                <div class="p-screen is-active" data-status="todo">
+                    <button class="c-edit" type="button" id="makeRemoveableBtn">
+                        <i class="icon-more-horizontal"></i>
                     </button>
-                </li>
-                <li class="p-todoList__item c-card -edit" data-status="todo">
-                    <div class="c-card__inner">
-                        <button class="c-card__check"></button>
-                        <p class="c-card__body">コンタクトレンズを買う</p>
-                        <button class="c-card__edit">
-                            <i class="icon-edit-2"></i>
-                        </button>
-                    </div>
-                    <button class="c-card__remove">
-                        <i class="icon-trash-2"></i>
+                    <ul class="p-todoList js-todoList is-active" id="todo"></ul>
+                    <button class="c-addBtn js-add">
+                        <i class="icon-plus"></i>ToDoを追加
                     </button>
-                </li> -->
-            </ul>
-            <button class="c-addBtn">
-                <i class="icon-plus"></i>ToDoを追加
-            </button>
-            <button class="c-floatAddBtn"><i class="icon-plus"></i></button>
-            <div class="p-notask">
-                <img src="./src/img/flower.svg" alt="" />
-                <p>タスクがありません</p>
-            </div>
-        </main>
-        <div class="c-dialog" id="js-dialog">
-            <div class="c-dialog__inner">
-                <div class="c-dialog__body">
-                    <p>タスクを削除しますか？</p>
-                    <button id="yes">削除</button>
+                    <div class="p-notask">
+                        <img src="./src/img/flower.svg" alt="" />
+                        <p>タスクがありません</p>
+                    </div>
                 </div>
-                <button class="c-dialog__cancel" id="cancel">キャンセル</button>
+                <div class="p-screen" data-status="done">
+                    <button class="c-edit" type="button" id="makeRemoveableBtn">
+                        <i class="icon-more-horizontal"></i>
+                    </button>
+                    <ul class="p-todoList js-todoList" id="done"></ul>
+                    <button class="c-addBtn js-add">
+                        <i class="icon-plus"></i>ToDoを追加
+                    </button>
+                    <div class="p-notask">
+                        <img src="./src/img/flower.svg" alt="" />
+                        <p>タスクがありません</p>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <button class="c-floatAddBtn js-add" id="floatAddBtn">
+                <i class="icon-plus"></i>
+            </button>
+        </main>
         <script src="src/index.js"></script>
     </body>
 </html>

@@ -1,15 +1,16 @@
 {
-  "name": "vanilla",
+  "name": "todolist",
   "version": "1.0.0",
-  "description": "JavaScript example starter project",
+  "description": "",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "node-sass": "6.0.1",
-    "parcel-bundler": "^1.6.1"
+    "node-sass": "4.13.1",
+    "parcel-bundler": "1.12.5",
+    "tween24": "1.4.0"
   },
   "devDependencies": {
     "@babel/core": "7.2.0"
@@ -17,8 +18,5 @@
   "resolutions": {
     "@babel/preset-env": "7.13.8"
   },
-  "keywords": [
-    "javascript",
-    "starter"
-  ]
+  "keywords": []
 }
